@@ -1,0 +1,18 @@
+# Test Plan: Student Account Management System
+
+This test plan covers the business logic implemented in the COBOL Student Account Management System. It is designed to validate the application's core features and business rules with stakeholders. Each test case includes fields for actual result, status, and comments to be filled during execution.
+
+| Test Case ID | Test Case Description                | Pre-conditions                | Test Steps                                                                 | Expected Result                                 | Actual Result | Status (Pass/Fail) | Comments |
+|--------------|--------------------------------------|-------------------------------|----------------------------------------------------------------------------|-------------------------------------------------|---------------|--------------------|----------|
+| TC-01        | View account balance                 | Account exists                | 1. Start app<br>2. Select 'View Balance'                                   | Current balance is displayed                    |               |                    |          |
+| TC-02        | Credit account with valid amount     | Account exists, balance known | 1. Start app<br>2. Select 'Credit Account'<br>3. Enter valid amount        | Balance increases by credited amount            |               |                    |          |
+| TC-03        | Debit account with valid amount      | Account exists, balance known | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter valid amount         | Balance decreases by debited amount             |               |                    |          |
+| TC-04        | Debit account with excessive amount  | Account exists, balance known | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter amount > balance     | Transaction denied, balance unchanged           |               |                    |          |
+| TC-05        | Credit account with invalid input    | Account exists                | 1. Start app<br>2. Select 'Credit Account'<br>3. Enter non-numeric input   | Error message, balance unchanged                |               |                    |          |
+| TC-06        | Debit account with invalid input     | Account exists                | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter non-numeric input    | Error message, balance unchanged                |               |                    |          |
+| TC-07        | Exit application                     | App running                   | 1. Start app<br>2. Select 'Exit'                                            | Application exits with confirmation message      |               |                    |          |
+| TC-08        | Invalid menu selection               | App running                   | 1. Start app<br>2. Enter invalid menu option (e.g., 5 or letter)           | Error message, menu re-displayed                |               |                    |          |
+| TC-09        | Data integrity after multiple ops    | Account exists                | 1. Perform multiple credits/debits<br>2. View balance                      | Balance reflects all valid transactions         |               |                    |          |
+| TC-10        | Prevent negative balance             | Account exists, low balance   | 1. Attempt debit to cause negative balance                                   | Transaction denied, balance unchanged           |               |                    |          |
+
+> **Note:** Fill in the 'Actual Result', 'Status', and 'Comments' columns during test execution.
